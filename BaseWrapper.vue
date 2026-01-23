@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import NavigationButtonSection from '@/ICOClientBase/components/navigation/NavigationButtonSection.vue';
 import NavigationButton from '@/ICOClientBase/components/navigation/NavigationButton.vue';
+import LoadingSpinner from '@/ICOClientBase/components/LoadingSpinner.vue';
 
 withDefaults(defineProps<{
   themeClass: string,
   showLoader?: boolean,
+  loaderMessage?: string,
   navItems: InstanceType<typeof NavigationButtonSection>['$props']['items'],
   navLogo: string,
   navExtraLogo?: string,
 }>(), {
   showLoader: false,
+  loaderMessage: undefined,
   navExtraLogo: undefined
 })
 </script>
@@ -45,7 +48,15 @@ withDefaults(defineProps<{
           </div>
         </nav>
       </slot>
-      <slot />
+      <div class="flex flex-col w-full relative">
+        <slot
+          v-if="showLoader"
+          name="loader">
+          <LoadingSpinner :message="loaderMessage" />
+        </slot>
+        <slot />
+      </div>
+      <slot name="bottom" />
     </div>
   </div>
 </template>
