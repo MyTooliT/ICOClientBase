@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import { textOrientation, widthStretch, firefox } from './src/utils/tailwindPlugins.ts';
+import { textOrientation, widthStretch, firefox } from './tailwindPlugins.ts';
 
 export default {
   content: ['./src/**/*.{html,js,vue}'],
