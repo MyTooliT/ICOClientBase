@@ -55,8 +55,8 @@ withDefaults(defineProps<{
           <LoadingSpinner :message="loaderMessage" />
         </slot>
         <slot />
+        <slot name="bottom" />
       </div>
-      <slot name="bottom" />
     </div>
   </div>
 </template>

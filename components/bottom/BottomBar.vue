@@ -15,8 +15,6 @@ const defaultMap: Record<State, string> = {
 </script>
 
 <script setup lang="ts">
-import {ComputedRef} from 'vue';
-
 type BBStatusProps = {
   name: string
   status?: string
