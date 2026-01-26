@@ -19,7 +19,7 @@ withDefaults(defineProps<{
 
 <template>
   <div :class="themeClass">
-    <div class="flex flex-row h-dvh w-dvw bg-surface overflow-hidden">
+    <div class="flex flex-row min-h-dvh bg-surface overflow-hidden">
       <slot name="nav">
         <nav class="bg-surface-container flex flex-col z-50">
           <NavigationButtonSection :items="navItems" />
