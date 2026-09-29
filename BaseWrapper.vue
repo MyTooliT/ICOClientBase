@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import NavigationButtonSection from '@/ICOClientBase/components/navigation/NavigationButtonSection.vue';
-import NavigationButton from '@/ICOClientBase/components/navigation/NavigationButton.vue';
-import LoadingSpinner from '@/ICOClientBase/components/LoadingSpinner.vue';
+import NavigationButtonSection from '@base/components/navigation/NavigationButtonSection.vue';
+import NavigationButton from '@base/components/navigation/NavigationButton.vue';
+import LoadingSpinner from '@base/components/LoadingSpinner.vue';
 
 withDefaults(defineProps<{
   themeClass: string,
@@ -9,11 +9,21 @@ withDefaults(defineProps<{
   loaderMessage?: string,
   navItems: InstanceType<typeof NavigationButtonSection>['$props']['items'],
   navLogo: string,
+  navLogoAlt?: string,
   navExtraLogo?: string,
+  navExtraLogoAlt?: string,
+  /** Where the logo buttons navigate to. */
+  logoRoute?: string,
+  /** Route name the logo buttons highlight for, matched against the active route. */
+  logoRouteName?: string,
 }>(), {
   showLoader: false,
   loaderMessage: undefined,
-  navExtraLogo: undefined
+  navLogoAlt: 'Application logo',
+  navExtraLogo: undefined,
+  navExtraLogoAlt: 'Secondary logo',
+  logoRoute: '/help',
+  logoRouteName: 'Help'
 })
 </script>
 
@@ -26,22 +36,22 @@ withDefaults(defineProps<{
           <div class="mt-auto">
             <NavigationButton
               v-if="navExtraLogo !== undefined"
-              name="Help"
-              to="/help"
+              :name="logoRouteName"
+              :to="logoRoute"
             >
               <img
                 :src="navExtraLogo"
-                alt="Extra Logo for ICOweb client"
+                :alt="navExtraLogoAlt"
                 class="w-full max-w-16 mx-auto"
               >
             </NavigationButton>
             <NavigationButton
-              name="Help"
-              to="/help"
+              :name="logoRouteName"
+              :to="logoRoute"
             >
               <img
                 :src="navLogo"
-                alt="Logo"
+                :alt="navLogoAlt"
                 class="w-full max-w-16 mx-auto"
               >
             </NavigationButton>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Divider from '@/ICOClientBase/components/Divider.vue'
+import Divider from '@base/components/Divider.vue'
 const slots = defineSlots<{
   default: any,
   aside: any,

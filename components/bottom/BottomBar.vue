@@ -8,7 +8,7 @@ export enum State {
 
 const defaultMap: Record<State, string> = {
   [State.ERROR]: 'bg-error-container text-on-error-container',
-  [State.WARNING]: ' bg-error-container text-on-error-container',
+  [State.WARNING]: 'bg-tertiary-container text-on-tertiary-container',
   [State.IDLE]: 'bg-primary-container text-on-primary-container',
   [State.ACTIVE]: 'bg-secondary text-on-secondary'
 }

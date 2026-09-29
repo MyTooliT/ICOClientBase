@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import NavigationButton from '@/ICOClientBase/components/navigation/NavigationButton.vue';
+import NavigationButton from '@base/components/navigation/NavigationButton.vue';
 
 type MenuItem = {
   name: string
