@@ -32,7 +32,8 @@ is also its first consumer.
 - The sidebar is at least 93 px wide (ICOweb's width, which comes from its longest label), and
   its buttons are square.
 - The bottom bar is at least 39 px high (the loading overlay is sized for it) and its status text
-  is right-aligned even when there is no left content.
+  is right-aligned even when there is no left content (the `left` slot has an empty fallback, so
+  `justify-between` keeps a middle slot centred when `left` is used, as in ICOweb).
 - Pages sit in `DefaultLayout` (12 px padding, full width, left-aligned) and start with a
   `TextBlock`.
 - Tailwind 4 works with this preset: `@import 'tailwindcss'; @config '<path>/tailwind.config.js';`

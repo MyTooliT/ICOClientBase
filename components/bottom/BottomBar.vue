@@ -38,10 +38,12 @@ withDefaults(defineProps<{
         flex flex-row justify-between items-center"
       :class="stateClassMap[state]"
     >
-      <slot name="left" />
+      <slot name="left">
+        <div />
+      </slot>
       <slot />
       <slot name="right">
-        <div class="ml-auto text-sm h-min flex self-center text-inherit">
+        <div class="text-sm h-min flex self-center text-inherit">
           <span
             v-for="(status, index) in statusInfos"
             :key="status.name"
