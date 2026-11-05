@@ -21,6 +21,22 @@ is also its first consumer.
 | `components/Divider.vue` | horizontal rule on theme colours |
 | `configuration/tailwind.preset.js` | Tailwind preset: Material colour tokens, custom utilities, PrimeUI plugin |
 | `configuration/tailwindPlugins.ts` | the custom utilities (writing mode, `w-stretch`, `firefox:` variant) |
+| `components/TextBlock.vue` | page header: heading, sub-heading and an outlined action button, with a bottom border |
+| `configuration/theme.css`, `theme.ts` | the shared theme classes (`.blue`, `.darkblue`) and the matching PrimeVue palettes |
+| `configuration/primevue.ts` | `createPrimeVueOptions(palette)`: Aura preset, dark mode on `.app-dark`, no ripple |
+
+### Matching ICOweb's look
+
+- **Buttons are PrimeVue `Button`s** (`outlined`, `link`, `size="small"`, `severity`), not custom
+  Tailwind buttons: that is what ICOweb uses, and it gives the thin outlines and no drop shadows.
+- The sidebar is at least 93 px wide (ICOweb's width, which comes from its longest label), and
+  its buttons are square.
+- The bottom bar is at least 39 px high (the loading overlay is sized for it) and its status text
+  is right-aligned even when there is no left content.
+- Pages sit in `DefaultLayout` (12 px padding, full width, left-aligned) and start with a
+  `TextBlock`.
+- Tailwind 4 works with this preset: `@import 'tailwindcss'; @config '<path>/tailwind.config.js';`
+  (plus `@tailwindcss/vite` or the CLI).
 
 ## Requirements for a consumer
 

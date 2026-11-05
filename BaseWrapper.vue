@@ -31,7 +31,7 @@ withDefaults(defineProps<{
   <div :class="themeClass">
     <div class="flex flex-row min-h-dvh bg-surface overflow-hidden">
       <slot name="nav">
-        <nav class="bg-surface-container flex flex-col z-50">
+        <nav class="bg-surface-container flex flex-col z-50 min-w-[93px]">
           <NavigationButtonSection :items="navItems" />
           <div class="mt-auto">
             <NavigationButton

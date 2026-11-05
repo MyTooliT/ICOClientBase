@@ -34,14 +34,14 @@ withDefaults(defineProps<{
 <template>
   <div class="w-full absolute bottom-0 left-0">
     <div
-      class="w-full pr-6 pb-1 text-right
+      class="w-full min-h-[39px] pr-6 pb-1 text-right
         flex flex-row justify-between items-center"
       :class="stateClassMap[state]"
     >
       <slot name="left" />
       <slot />
       <slot name="right">
-        <div class="text-sm h-min flex self-center text-inherit">
+        <div class="ml-auto text-sm h-min flex self-center text-inherit">
           <span
             v-for="(status, index) in statusInfos"
             :key="status.name"
