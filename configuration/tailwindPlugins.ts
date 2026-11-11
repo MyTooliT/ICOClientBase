@@ -18,9 +18,12 @@ export const textOrientation =
 
 export const widthStretch =
   plugin(function ({ addUtilities }) {
+    // Fallbacks come last so each browser keeps the last value it understands:
+    // Chromium/Safari -> -webkit-fill-available, Firefox -> -moz-available.
+    const fill = ['stretch', '-webkit-fill-available', '-moz-available'];
     addUtilities({
-      '.w-stretch': { 'width': 'stretch' },
-      '.w-fill': { 'width': '--webkit-fill-available' },
+      '.w-stretch': { 'width': fill },
+      '.w-fill': { 'width': fill },
     });
   })
 
