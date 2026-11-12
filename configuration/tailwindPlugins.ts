@@ -24,6 +24,7 @@ export const widthStretch =
     addUtilities({
       '.w-stretch': { 'width': fill },
       '.w-fill': { 'width': fill },
+      '.h-stretch': { 'height': fill },
     });
   })
 
