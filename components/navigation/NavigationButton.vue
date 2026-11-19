@@ -13,6 +13,7 @@ const props = defineProps<{
 
 <template>
   <button
+    :data-test="`nav-${props.name.toLowerCase()}`"
     :data-active="route.matched.map(match => match.name).includes(props.name)"
     :data-disabled="disabled"
     :disabled="disabled"

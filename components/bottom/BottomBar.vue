@@ -34,6 +34,8 @@ withDefaults(defineProps<{
 <template>
   <div class="w-full absolute bottom-0 left-0">
     <div
+      data-test="status-bar"
+      :data-state="state"
       class="w-full min-h-[39px] pr-6 pb-1 text-right
         flex flex-row justify-between items-center"
       :class="stateClassMap[state]"
